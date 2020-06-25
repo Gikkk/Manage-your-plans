@@ -26,7 +26,7 @@ class Component {
   detach() {
     if (this.element) {
       this.element.remove();
-      // this.element.parentElement.removeChild(this.element);
+      
     }
   }
 
@@ -65,7 +65,7 @@ class Tooltip extends Component {
     const y = hostElPosTop + hostElHeight - parentElementScrolling - 10;
 
     tooltipElement.style.position = 'absolute';
-    tooltipElement.style.left = x + 'px'; // 500px
+    tooltipElement.style.left = x + 'px'; 
     tooltipElement.style.top = y + 'px';
 
     tooltipElement.addEventListener('click', this.closeTooltip);
@@ -150,8 +150,7 @@ class ProjectList {
   }
 
   switchProject(projectId) {
-    // const projectIndex = this.projects.findIndex(p => p.id === projectId);
-    // this.projects.splice(projectIndex, 1);
+    
     this.switchHandler(this.projects.find(p => p.id === projectId));
     this.projects = this.projects.filter(p => p.id !== projectId);
   }
